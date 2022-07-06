@@ -1,0 +1,26 @@
+#### Create tournament
+POST http://localhost:5000/tournament/new
+Accept: application/json
+
+{
+    "name": "my-tournament",
+    "players": [
+        {
+            "name": "Juan",
+            "seed": null
+        },
+        {
+            "name": "Musio",
+            "seed": 2
+        },
+        {
+            "name": "Patricia",
+            "seed": 1
+        }
+    ]
+}
+
+return
+{
+    "torunament_id": "123-456-abcd"
+}
