@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Title } from './Title';
+import { TournamentName } from './TournamentName';
+import { Totalplayers } from './TotalPlayers';
+import { Seed } from './Seed';
+import { Createbuttom } from './CreateButtom';
+//import './App.css';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.fragment>
+
+      <Title/>
+
+      <TournamentName/>
+
+      <TotalPlayers/>
+
+      <Seed/>
+
+      <playersBox/>
+
+      <Createbuttom/>
+
+    </React.fragment>
+ 
   );
 }
 
