@@ -1,10 +1,14 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from controller.tournament_controller import tournament_controller
 
+
+db = SQLAlchemy()
 app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
+db.init_app(app)
 
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+app.register_blueprint(tournament_controller)
 
 
 if __name__ == '__main__':
