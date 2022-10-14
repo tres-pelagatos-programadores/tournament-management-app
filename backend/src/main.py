@@ -1,13 +1,16 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from controller.tournament_controller import tournament_controller
 
 
-db = SQLAlchemy()
+
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///tournament.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+db = SQLAlchemy(app)
 db.init_app(app)
 
+
+from controller.tournament_controller import tournament_controller
 app.register_blueprint(tournament_controller)
 
 
