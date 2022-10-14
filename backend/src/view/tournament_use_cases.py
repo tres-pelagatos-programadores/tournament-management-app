@@ -1,5 +1,5 @@
 from typing import Any
-from model.tournament_models import Tournament, Player
+from model.tournament_models import db, Tournament, Player
 from datetime import date
 
 
@@ -15,8 +15,12 @@ def create_tournament(request_data: dict[str, Any]) -> Tournament:
             start_date=start_date,
             participants=player_objects
         )
-
-    tournament.save()
-    tournament.commit()
+    
+    db.session.add(tournament)
+    db.session.commit()
 
     return tournament
+
+
+def find_tournament_by_id(tournament_id: int) -> Tournament:
+    return Tournament.query.filter_by(id = tournament_id).first()
