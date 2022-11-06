@@ -1,7 +1,5 @@
 import unittest
-import sys
-sys.path.append("..")
-from view.tournament_use_cases import create_tournament, find_tournament_by_id
+from src.view.tournament_use_cases import create_tournament, find_tournament_by_id
 from werkzeug.test import Client
 from werkzeug.testapp import test_app
 

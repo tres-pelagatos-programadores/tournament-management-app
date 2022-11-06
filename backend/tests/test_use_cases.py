@@ -1,12 +1,10 @@
-import sys
-sys.path.append("..")
 import unittest
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from controller.tournament_controller import process_create_tournament_request, get_tournament_by_id
-from view.tournament_use_cases import find_tournament_by_id, create_tournament
-from main import app
+from src.controller.tournament_controller import process_create_tournament_request, get_tournament_by_id
+from src.view.tournament_use_cases import find_tournament_by_id, create_tournament
+from src.main import app
 from datetime import date
 
 Base = declarative_base()
